@@ -1,2 +1,27 @@
 /* Styles for the Library project */
 
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.book{
+    background-color: greenyellow;
+    height: 12rem;
+    width: 9rem;
+}
+
+.details{
+    padding: 10px;
+}
+
+.details > p{
+    margin: 0px;
+}
+
+.shelf-grid{
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+}
