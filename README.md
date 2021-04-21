@@ -1,6 +1,6 @@
 # Library
 
-An library app.
+A library app.
 
 ---
 
