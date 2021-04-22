@@ -1,10 +1,10 @@
 # Library
 
-A library app.
+A library app for tracking the books you've read.
 
 ---
 
 ## Usage
-Use your mouse to click the library buttons.
+You can remove books, add new books, and update the read statuses on the various books. The library is stored in `localStorage`.
 
-[Link to Library](https://jql6.github.io/)
+[Link to Library](https://jql6.github.io/Library/)
