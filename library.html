@@ -2,13 +2,36 @@
 <html>
 <head>
   <title>Library</title>
-  <meta charset="UTF-8"/>
   <link rel="stylesheet" href="library_style.css">
-  <script src="library.js"></script>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Library">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
 <body>
-  <section class="shelf-grid">
-    
+  <header>
+    <h1>Library app</h1>
+    <p>
+      <a href="https://github.com/jql6/Library">
+        Link to the repository
+      </a> | 
+      <a href="https://jql6.github.io/">
+        Return to homepage
+      </a>
+    </p>
+  </header>
+  <section id="pop-up-container"></section>
+  <section id="shelf-container">
+    <section id="shelf-grid"></section>
   </section>
+  <footer>
+    <button class="new-book">NEW BOOK</button>
+    <details><summary>Hidden settings</summary>
+      <button class="reset-library">RESET LIBRARY</button>
+    </details>
+  </footer>
+  <!-- JavaScript code here -->
+  <script src="library.js"></script>
 </body>
 </html>

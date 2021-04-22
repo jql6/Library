@@ -1,27 +1,241 @@
 /* Styles for the Library project */
 
+/* Use background image gradient for bookshelf appearance */
+
+:root{
+    --body-content-margins: 1rem auto;
+    --body-content-width: 88%;
+    --book-height: 210px;
+    --book-width: calc(var(--book-height) / 1.5);
+    --color-bookshelf-dark: rgb(160, 104, 0);
+    --color-bookshelf-light: rgb(255, 206, 115);
+    --footer-width: calc(var(--body-content-width) + var(--shelf-gaps) + 10px);
+    --new-book-form-gap: 10px;
+    --shelf-gaps: 1.2rem;
+}
+
+html{
+    background-color: rgb(46, 45, 51);
+    color: white;
+}
+
+a{
+    color: rgb(76, 76, 241);
+}
+
+a:visited{
+    color: rgb(230, 180, 180);
+}
+
 body{
-    display: flex;
-    justify-content: center;
+    margin: 10px;
+    min-width: 320px;
+}
+
+button{
+    background-color: #818181;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 32px;
+}
+
+button:hover{
+    background-color: #303030;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    margin: 0px auto;
+    padding: 5px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 10px;
+    text-align: center;
+    width: var(--footer-width);
+}
+
+footer details{
+    background-color: #333;
+    border: 1px solid black;
+    box-sizing: border-box;
+    cursor: default;
+    margin: 1rem auto;
+    width: 49%;
+}
+
+footer summary{
+    margin: 0.3rem auto;
+}
+
+form{
+    text-align: center;
+}
+
+form > section{
+    padding: 5px;
+}
+
+form > section > *{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+header{
+    text-align: center;
+}
+
+input{
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: calc(var(--new-book-form-gap) * 2) 0;
+    margin-top: 0px;
+    min-width: 200px;
+}
+
+input[type="checkbox"]{
+    transform: scale(2);
 }
 
 .book{
-    background-color: greenyellow;
-    height: 12rem;
-    width: 9rem;
+    background-color: rgb(0, 32, 136);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid black;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1rem;
+    min-height: var(--book-height);
+    width: var(--book-width);
 }
 
-.details{
-    padding: 10px;
+.book:hover{
+    border-color: rgb(0, 32, 136);
+    box-shadow: 0px 0px 2px 2px rgb(223, 223, 223);
 }
 
-.details > p{
+.book p{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    max-height: 1.1rem;
     margin: 0px;
+    padding: 0.65rem 0px;
+    overflow: hidden;
 }
 
-.shelf-grid{
-    background-color: grey;
+.book p:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: visible;
+    white-space: normal;
+}
+
+
+.book-buttons{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
+    grid-gap: calc(var(--new-book-form-gap) / 2);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 36px;
+    margin: 5px;
+}
+
+.book-buttons > button{
+    font-size: 12px;
+    height: 100%;
+    padding: 3px;
+}
+
+.new-book{
+    width: 49%;
+}
+
+.reset-library{
+    background-color: #8d4747;
+    width: 100%;
+}
+
+.reset-library:hover{
+    background-color: rgba(112, 20, 20, 0.4);
+}
+
+#reset-confirmation{
+    font-size: auto;
+}
+
+#shelf-container{
+    margin-bottom: 130px;
+    min-height: 80%;
+}
+
+#shelf-grid{
+    background-color: var(--color-bookshelf-light);
+    /* This makes this look like a bookshelf */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        var(--color-bookshelf-light) 0px,
+        var(--color-bookshelf-light) calc(var(--book-height)),
+        var(--color-bookshelf-dark) calc(var(--book-height)),
+        var(--color-bookshelf-dark) calc(var(--book-height) + var(--shelf-gaps))
+        );
+    border: var(--shelf-gaps) solid var(--color-bookshelf-dark);
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--shelf-gaps);
+    justify-items: center;
+    margin: var(--body-content-margins);
+    min-height: var(--book-height);
+    text-align: center;
+    width: var(--body-content-width);
+}
+
+#new-book-form{
+    background-color:rgba(0, 0, 0, 0.9);
+    color: white;
+    display: grid;
+    grid-gap: var(--new-book-form-gap);
+    grid-template-columns: 2fr 3fr;
+    font-size: 20px;
+    min-width: 320px;
+    padding: var(--new-book-form-gap);
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0px;
+    right: 0px;
+    top: 50%;
+    width: var(--body-content-width);
+}
+
+/**
+ * Breakpoints
+ */
+ 
+@media screen and (min-width:600px){
+    #shelf-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width:630px){
+    #new-book-form{
+        top: 30%;
+    }
+}
+
+@media screen and (min-width:850px){
+    #shelf-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width:1100px){
+    #shelf-grid{
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
