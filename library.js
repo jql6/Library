@@ -1,5 +1,5 @@
 /**
- * JavaScript file for `library.html`
+ * JavaScript file for the library app's `index.html`
  */
 
 /**
