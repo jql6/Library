@@ -7,11 +7,13 @@
  */
 
 // Book constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = (read == "read" ? "read" : "not read");
+class Book{
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = (read == "read" ? "read" : "not read");
+    }
 }
 
 // Function for adding books to the library array
